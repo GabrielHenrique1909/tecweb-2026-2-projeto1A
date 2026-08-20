@@ -2,10 +2,9 @@ from pathlib import Path
 import json
 
 def extract_route(request):
-    ind = request.find("/")
-    for i in range(ind, len(request)):
-        if request[i] == " ":
-            return request[ind + 1:i]
+    lista = request.split()
+    route = lista[1]
+    return route[1:]
 
 def read_file(filepath):
     opened_file = open(filepath, 'rb')
